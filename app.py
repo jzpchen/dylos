@@ -11,8 +11,6 @@ def index():
     data = csv.DictReader(csv_f, fieldnames=['timestamp', 'small', 'large'], delimiter=',')
     list = []
     for row in data:
-      # t = datetime.datetime.strptime(row['timestamp'], "%a %b %d %H:%M:%S %Y")
-      # row['timestamp'] = t.isoformat()
       list.append(row)
     res = jsonify(list)
     res.headers['Access-Control-Allow-Origin'] = '*'
